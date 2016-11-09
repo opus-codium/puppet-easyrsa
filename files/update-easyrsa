@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -e
+
+if [ $# -ne 1 ]; then
+	echo "usage: $0 version" >&2
+	exit 1
+fi
+
+curl -L https://github.com/OpenVPN/easy-rsa/archive/$1.tar.gz | tar zxf -
+rsync -a --delete easy-rsa-$1/ easy-rsa
+rm -r easy-rsa-$1
+
+echo "Import done."
+echo "Please review and commit changes in the 'easy-rsa' directory."
