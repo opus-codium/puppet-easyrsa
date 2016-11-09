@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe 'easyrsa::cert' do
+  let(:title) { 'we-really-dont-care' }
+
   let(:params) do
     {
       common_name: 'Test Certificate',
