@@ -1,0 +1,10 @@
+HOSTS:
+  debian-8-x64:
+    roles:
+      - agent
+      - default
+    platform: debian-8-amd64
+    hypervisor: vagrant
+    box: dhoppe/debian-8.6.0-amd64-nocm
+CONFIG:
+  type: foss

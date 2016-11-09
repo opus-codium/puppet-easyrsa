@@ -16,3 +16,8 @@ else
   # rubocop requires ruby >= 1.9
   gem 'rubocop'
 end
+
+group :acceptance do
+  gem 'beaker-rspec'
+  gem 'beaker-puppet_install_helper', require: false
+end
