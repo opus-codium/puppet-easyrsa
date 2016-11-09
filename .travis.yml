@@ -1,5 +1,6 @@
 ---
 language: ruby
+bundler_args: --without acceptance
 script: "bundle exec rake validate lint spec"
 rvm:
   - 2.0
