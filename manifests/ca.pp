@@ -14,7 +14,7 @@ define easyrsa::ca (
     recurse => true,
     owner   => 'root',
     group   => 'root', # FIXME: FreeBSD use wheel
-    source  => 'puppet:///modules/easyrsa/easyrsa3',
+    source  => 'puppet:///modules/easyrsa/easy-rsa/easyrsa3',
   }
 
   # Init the PKI as root (because we need to write in the easy-rsa directory);
