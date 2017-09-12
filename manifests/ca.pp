@@ -25,15 +25,13 @@ define easyrsa::ca (
     creates => "${title}/pki",
     path    => '/bin:/usr/bin',
   }
-  ->
-  file { "${title}/pki":
+  -> file { "${title}/pki":
     ensure  => directory,
     recurse => true,
     owner   => $user,
     group   => $group,
   }
-  ->
-  exec { "${title}/easyrsa build-ca nopass":
+  -> exec { "${title}/easyrsa build-ca nopass":
     cwd         => $title,
     user        => $user,
     group       => $group,
@@ -44,8 +42,7 @@ define easyrsa::ca (
       "EASYRSA_REQ_CN=${common_name}",
     ],
   }
-  ->
-  exec { "${title}/easyrsa gen-dh":
+  -> exec { "${title}/easyrsa gen-dh":
     cwd     => $title,
     user    => $user,
     group   => $group,
@@ -53,8 +50,7 @@ define easyrsa::ca (
     path    => '/bin:/usr/bin',
     timeout => 3600,
   }
-  ->
-  exec { "${title}/easyrsa gen-crl":
+  -> exec { "${title}/easyrsa gen-crl":
     cwd     => $title,
     user    => $user,
     group   => $group,
