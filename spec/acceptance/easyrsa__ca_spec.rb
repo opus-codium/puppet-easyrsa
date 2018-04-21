@@ -2,13 +2,13 @@ require 'spec_helper_acceptance'
 
 describe 'easyrsa::ca' do
   before(:all) do
-    pp = <<-EOT
+    pp = <<-PP
       easyrsa::ca { '/test-ca':
         common_name => 'TEST-CA',
         user        => 'nobody',
         group       => 'nogroup',
       }
-    EOT
+    PP
 
     apply_manifest(pp, catch_failures: true)
   end
@@ -23,14 +23,14 @@ describe 'easyrsa::ca' do
 
   context 'create certificate' do
     before(:all) do
-      pp = <<-EOT
+      pp = <<-PP
         easyrsa::cert { 'fixme-we-need-something-here':
           easyrsadir  => '/test-ca',
           common_name => 'TEST-CERT',
           user        => 'nobody',
           group       => 'nogroup',
         }
-      EOT
+      PP
 
       apply_manifest(pp, catch_failures: true)
     end
