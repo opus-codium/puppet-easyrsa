@@ -7,7 +7,7 @@ describe 'easyrsa::ca' do
     {
       common_name: 'Test CA',
       user: 'bloub',
-      group: 'bloub'
+      group: 'bloub',
     }
   end
 

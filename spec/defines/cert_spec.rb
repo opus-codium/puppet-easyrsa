@@ -8,7 +8,7 @@ describe 'easyrsa::cert' do
       common_name: 'Test Certificate',
       easyrsadir: '/path/to/easyrsa',
       user: 'bloub',
-      group: 'bloub'
+      group: 'bloub',
     }
   end
 
