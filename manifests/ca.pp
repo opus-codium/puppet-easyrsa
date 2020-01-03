@@ -1,3 +1,8 @@
+# @summary Manage easyrsa CA
+#
+# @param common_name
+# @param user
+# @param group
 define easyrsa::ca (
   $common_name,
   $user,

@@ -1,3 +1,9 @@
+# @summary Manage EasyRSA certificate
+#
+# @param common_name
+# @param easyrsadir
+# @param user
+# @param group
 define easyrsa::cert (
   $common_name,
   $easyrsadir,
