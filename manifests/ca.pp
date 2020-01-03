@@ -4,9 +4,9 @@
 # @param user
 # @param group
 define easyrsa::ca (
-  $common_name,
-  $user,
-  $group,
+  String           $common_name,
+  Optional[String] $user,
+  Optional[String] $group,
 ) {
 
   $ca   = "${title}/pki/ca.crt"
