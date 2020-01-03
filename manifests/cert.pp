@@ -5,10 +5,10 @@
 # @param user
 # @param group
 define easyrsa::cert (
-  $common_name,
-  $easyrsadir,
-  $user,
-  $group,
+  String           $common_name,
+  String           $easyrsadir,
+  Optional[String] $user,
+  Optional[String] $group,
 ) {
   exec { "${easyrsadir}/easyrsa build-server-full \"${common_name}\" nopass":
     cwd     => $easyrsadir,
